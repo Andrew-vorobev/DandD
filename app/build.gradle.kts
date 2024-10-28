@@ -1,14 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("plugin.serialization") version "1.9.21"
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
-    namespace = "com.example.dandd"
+    namespace = "com.example.dungeonanddragonsapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.dandd"
+        applicationId = "com.example.dungeonanddragonsapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -48,7 +52,14 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
     testImplementation(libs.junit)
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-json-jvm
+    implementation(libs.kotlinx.serialization.json.jvm)
+
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
