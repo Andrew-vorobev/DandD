@@ -4,6 +4,8 @@ import com.example.dandd.data.dao.ItemDao
 import com.example.dandd.data.dao.ItemDaoImpl
 import com.example.dandd.data.repo.ItemRepository
 import com.example.dandd.data.repo.ItemRepositoryImpl
+import com.example.dandd.data.retrofit.converter.ItemNetworkToItemDb
+import com.example.dandd.data.retrofit.converter.ItemNetworkToItemDbImpl
 import com.example.dandd.domain.converter.ItemToItemView
 import com.example.dandd.domain.converter.ItemToItemViewImpl
 import com.example.dandd.domain.usecase.ItemsUseCase
@@ -17,9 +19,10 @@ import com.example.dungeonanddragonsapp.presentation.ui.fragment.home.HomeViewMo
 import org.koin.dsl.module
 
 val rootModule = module{
-    single<ItemRepository> { ItemRepositoryImpl(get(), get()) }
+    single<ItemRepository> { ItemRepositoryImpl(get(), get(), get(), get()) }
     single<ItemDao> { ItemDaoImpl() }
     factory<ItemDbToItem> { ItemDbToItemImpl() }
+    factory<ItemNetworkToItemDb> { ItemNetworkToItemDbImpl() }
 
     single<DataListViewModel> {DataListViewModel(get(), get())}
     single<DataDetailViewModel> {DataDetailViewModel()}

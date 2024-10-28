@@ -2,7 +2,7 @@ package com.example.dungeonanddragonsapp.presentation.ui.model.item
 
 import android.net.Uri
 import android.os.Parcelable
-import com.example.dungeonanddragonsapp.presentation.ui.model.skill.Skill
+import com.example.dandd.presentation.ui.model.skill.Skill
 import com.example.dungeonanddragonsapp.presentation.ui.util.Serializer
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable

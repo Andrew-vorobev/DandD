@@ -1,15 +1,14 @@
 package com.example.dungeonanddragonsapp.data.mock
 
 import android.net.Uri
-import com.example.dungeonanddragonsapp.data.model.ItemDb
-import com.example.dungeonanddragonsapp.presentation.ui.model.skill.Skill
+import com.example.dandd.data.model.ItemDb
+import com.example.dandd.presentation.ui.model.skill.Skill
 
 /**
  * @author Andrew
  */
 class MockData {
     var itemDb = ItemDb(
-        id = 1,
         index = "cha",
         name = "CHA",
         fullName = "Charisma",
@@ -19,17 +18,15 @@ class MockData {
         ),
         skills = listOf(
             Skill(
-                name = "Deception",
-                index = "deception",
-                url = Uri.parse("/api/skills/deception")
+                choose = 0,
+                desc = "deception",
             ), Skill(
-                "Intimidation",
-                index = "intimidation",
-                url = Uri.parse("/api/skills/intimidation")
+                0,
+                desc = "intimidation",
             )
         ),
         url = Uri.parse("/api/ability-scores/cha")
     )
 
-    val listItems = listOf(itemDb, itemDb.copy(fullName = "bebe"), itemDb)
+    val listItems = mutableListOf(itemDb, itemDb.copy(fullName = "bebe"), itemDb)
 }
