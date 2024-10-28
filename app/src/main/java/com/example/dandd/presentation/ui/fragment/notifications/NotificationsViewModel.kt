@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.fragment.notifications
+package com.example.dandd.presentation.ui.fragment.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

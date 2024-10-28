@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.adapter
+package com.example.dandd.presentation.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

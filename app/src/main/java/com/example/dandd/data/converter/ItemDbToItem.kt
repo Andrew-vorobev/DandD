@@ -1,18 +1,18 @@
 package com.example.dungeonanddragonsapp.data.converter
 
+import com.example.dungeonanddragonsapp.data.model.Item
 import com.example.dungeonanddragonsapp.data.model.ItemDb
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
 
 /**
  * @author Andrew
  */
-interface ItemDbToItemView {
-    fun convert(itemDb: ItemDb): ItemView
+interface ItemDbToItem {
+    fun convert(itemDb: ItemDb): Item
 }
 
-class ItemDbToItemViewImpl() : ItemDbToItemView {
-    override fun convert(itemDb: ItemDb): ItemView {
-        return ItemView(
+class ItemDbToItemImpl() : ItemDbToItem {
+    override fun convert(itemDb: ItemDb): Item {
+        return Item(
             index = itemDb.index,
             name = itemDb.name,
             fullName = itemDb.fullName,

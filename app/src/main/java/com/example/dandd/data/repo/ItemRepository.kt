@@ -1,28 +1,32 @@
-package com.example.dungeonanddragonsapp.data.repo
+package com.example.dandd.data.repo
 
-import com.example.dungeonanddragonsapp.data.converter.ItemDbToItemView
-import com.example.dungeonanddragonsapp.data.dao.ItemDao
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
+import com.example.dandd.data.dao.ItemDao
+import com.example.dungeonanddragonsapp.data.converter.ItemDbToItem
+import com.example.dungeonanddragonsapp.data.model.Item
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 
 /**
  * @author Andrew
  */
 
 interface ItemRepository {
-    fun getItems(): List<ItemView>
+    suspend fun getItems(): Flow<List<Item>>
 
-    fun getItem(id: Int): ItemView
+    suspend fun getItem(id: Int): Flow<Item>
 }
 
 class ItemRepositoryImpl(
     private val itemDao: ItemDao,
-    private val itemDbToItemView: ItemDbToItemView
+    private val itemDbToItem: ItemDbToItem
 ) : ItemRepository {
-    override fun getItems(): List<ItemView> {
-        val listItemDb = itemDao.getItems()
-        return listItemDb.map { itemDbToItemView.convert(it) }
+    override suspend fun getItems(): Flow<List<Item>> {
+        val listItemDb = itemDao.getItems().first()
+        return flow { emit(listItemDb.map { itemDbToItem.convert(it) }) }
     }
 
-    override fun getItem(id: Int): ItemView = itemDbToItemView.convert(itemDb = itemDao.getItem(id))
+    override suspend fun getItem(id: Int): Flow<Item> =
+        flow { emit(itemDbToItem.convert(itemDb = itemDao.getItem(id).first())) }
 
 }

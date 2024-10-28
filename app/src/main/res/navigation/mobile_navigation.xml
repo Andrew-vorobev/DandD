@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_data_list"
-        android:name="com.example.dungeonanddragonsapp.presentation.ui.fragment.dataList.DataListFragment"
+        android:name="com.example.dandd.presentation.ui.fragment.dataList.DataListFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_data_list" >
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.dungeonanddragonsapp.presentation.ui.fragment.notifications.NotificationsFragment"
+        android:name="com.example.dandd.presentation.ui.fragment.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 

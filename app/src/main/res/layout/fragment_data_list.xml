@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragment.dataList.DataListFragment">
+    tools:context="com.example.dandd.presentation.ui.fragment.dataList.DataListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/films_recycler_view"

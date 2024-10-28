@@ -8,7 +8,7 @@ import com.example.dungeonanddragonsapp.presentation.ui.model.skill.Skill
  * @author Andrew
  */
 class MockData {
-    private val itemDb = ItemDb(
+    var itemDb = ItemDb(
         id = 1,
         index = "cha",
         name = "CHA",
