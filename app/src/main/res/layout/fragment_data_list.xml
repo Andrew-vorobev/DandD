@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragment.dataList.DataListFragment">
+    tools:context="com.example.dandd.presentation.ui.fragment.dataList.DataListFragment">
 
+    <ProgressBar
+        android:id="@+id/data_list_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/films_recycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/films_recycler_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ProgressBar>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/films_recycler_view"
         android:layout_width="match_parent"
@@ -16,4 +26,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_list" />
+
+    <Button
+        android:id="@+id/data_list_reload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reload"
+        app:layout_constraintBottom_toBottomOf="@+id/films_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_list_progress_bar"
+        app:layout_constraintVertical_bias="0.16"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>

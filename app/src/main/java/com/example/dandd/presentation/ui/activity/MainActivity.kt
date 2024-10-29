@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.activity
+package com.example.dandd.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
