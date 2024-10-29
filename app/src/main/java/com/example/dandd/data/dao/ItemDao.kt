@@ -1,7 +1,7 @@
 package com.example.dandd.data.dao
 
 import com.example.dandd.data.model.ItemDb
-import com.example.dungeonanddragonsapp.data.mock.MockData
+import com.example.dandd.data.mock.MockData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

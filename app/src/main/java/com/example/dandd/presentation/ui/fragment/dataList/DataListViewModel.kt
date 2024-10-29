@@ -12,14 +12,18 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class DataListViewModel(
-    useCase: ItemsUseCase,
-    converter: ItemToItemView
+    private val useCase: ItemsUseCase,
+    private val converter: ItemToItemView
 ) : ViewModel() {
 
     private val _items = MutableStateFlow<List<ItemView>>(emptyList())
     val items: StateFlow<List<ItemView>> = _items.asStateFlow()
 
     init {
+        loadItems()
+    }
+
+    fun loadItems(){
         viewModelScope.launch {
             _items.value = useCase.getItems().first().map { converter.convert(it) }
         }

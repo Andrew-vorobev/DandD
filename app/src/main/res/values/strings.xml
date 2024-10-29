@@ -5,7 +5,7 @@
     <string name="title_notifications">Уведомления</string>
     <string name="name_item_list">Название</string>
     <string name="data_detail_resource_name">Название</string>
-    <string name="data_detail_resource_desc">описание</string>
+    <string name="data_detail_resource_desc">Описание</string>
     <string name="data_detail_resource_skills">Описание скиллов</string>
     <string name="item_list_skills_resources">Скилы</string>
 </resources>

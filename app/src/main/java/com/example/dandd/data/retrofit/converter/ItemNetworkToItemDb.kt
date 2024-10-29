@@ -16,7 +16,7 @@ class ItemNetworkToItemDbImpl() : ItemNetworkToItemDb {
             name = item.name ?: "",
             fullName = item.subclasses?.joinToString(separator = " ") { it.name ?: "" } ?: "",
             desc = item.proficiencies?.map { it.name ?: "" } ?: listOf(),
-            skills = item.proficiencyChoices?.map {
+            skills = item.proficiency_choices?.map {
                 Skill(
                     choose = it.choose ?: 0,
                     desc = it.desc ?: ""

@@ -7,25 +7,25 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ItemNetwork(
     @SerialName("class_levels")
-    val classLevels: String? = "",
+    val class_levels: String? = "",
     @SerialName("hit_die")
-    val hitDie: Int? = 0,
+    val hit_die: Int? = 0,
     @SerialName("index")
     val index: String? = "",
     @SerialName("multi_classing")
-    val multiClassing: MultiClassing? = MultiClassing(),
+    val multi_classing: MultiClassing? = MultiClassing(),
     @SerialName("name")
     val name: String? = "",
     @SerialName("proficiencies")
     val proficiencies: List<ProficiencyX>? = listOf(),
     @SerialName("proficiency_choices")
-    val proficiencyChoices: List<ProficiencyChoice>? = listOf(),
+    val proficiency_choices: List<ProficiencyChoice>? = listOf(),
     @SerialName("saving_throws")
-    val savingThrows: List<SavingThrow>? = listOf(),
+    val saving_throws: List<SavingThrow>? = listOf(),
     @SerialName("starting_equipment")
-    val startingEquipment: List<StartingEquipment>? = listOf(),
+    val starting_equipment: List<StartingEquipment>? = listOf(),
     @SerialName("starting_equipment_options")
-    val startingEquipmentOptions: List<StartingEquipmentOption>? = listOf(),
+    val starting_equipment_options: List<StartingEquipmentOption>? = listOf(),
     @SerialName("subclasses")
     val subclasses: List<Subclasse>? = listOf(),
     @SerialName("url")
