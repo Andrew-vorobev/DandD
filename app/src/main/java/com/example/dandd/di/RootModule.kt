@@ -25,6 +25,7 @@ import com.example.dandd.domain.usecase.ItemsUseCaseImpl
 import com.example.dandd.presentation.ui.activity.MainActivityViewModel
 import com.example.dandd.presentation.ui.fragment.dataList.DataListViewModel
 import com.example.dandd.presentation.ui.fragment.detail.DataDetailViewModel
+import com.example.dandd.presentation.ui.fragment.favourites.FavouritesViewModel
 import com.example.dandd.presentation.ui.fragment.home.HomeViewModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
@@ -44,7 +45,7 @@ val rootModule = module{
     single<DataDetailViewModel> { DataDetailViewModel(get(),get()) }
     single<HomeViewModel> { HomeViewModel() }
     single<MainActivityViewModel> { MainActivityViewModel(get()) }
-//    single<FavouritesViewModel> {FavouritesViewModel(get(), get())}
+    single<FavouritesViewModel> {FavouritesViewModel(get(), get())}
 
     single<ItemsUseCase> { ItemsUseCaseImpl(get()) }
     single<ItemToItemView>{ ItemToItemViewImpl()}

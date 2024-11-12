@@ -30,4 +30,13 @@
             app:argType="com.example.dandd.presentation.ui.model.item.ItemView" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.dandd.presentation.ui.fragment.favourites.FavouritesFragment"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_navigation_favourite_to_navigation_data_detail"
+            app:destination="@id/navigation_data_detail" />
+    </fragment>
+
 </navigation>
