@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_data_detail">
         <argument
             android:name="ItemView"
-            app:argType="com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView" />
+            app:argType="com.example.dandd.presentation.ui.model.item.ItemView" />
     </fragment>
 
 </navigation>

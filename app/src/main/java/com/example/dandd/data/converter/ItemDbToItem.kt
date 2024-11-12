@@ -1,8 +1,8 @@
-package com.example.dungeonanddragonsapp.data.converter
+package com.example.dandd.data.converter
 
 import android.net.Uri
 import com.example.dandd.data.model.ItemDb
-import com.example.dungeonanddragonsapp.data.model.Item
+import com.example.dandd.domain.model.Item
 
 /**
  * @author Andrew

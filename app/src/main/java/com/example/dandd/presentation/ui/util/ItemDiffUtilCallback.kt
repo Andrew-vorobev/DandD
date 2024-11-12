@@ -1,17 +1,17 @@
-package com.example.dungeonanddragonsapp.presentation.ui.util
+package com.example.dandd.presentation.ui.util
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
+import com.example.dandd.presentation.ui.model.ClassView
 
 /**
  * @author Andrew
  */
-class ItemDiffUtilCallback: DiffUtil.ItemCallback<ItemView>() {
-    override fun areItemsTheSame(oldItem: ItemView, newItem: ItemView): Boolean {
+class ItemDiffUtilCallback: DiffUtil.ItemCallback<ClassView>() {
+    override fun areItemsTheSame(oldItem: ClassView, newItem: ClassView): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: ItemView, newItem: ItemView): Boolean {
-        return oldItem.fullName == newItem.fullName && oldItem.skills == newItem.skills
+    override fun areContentsTheSame(oldItem: ClassView, newItem: ClassView): Boolean {
+        return oldItem.name == newItem.name && oldItem.index == newItem.index
     }
 }

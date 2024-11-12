@@ -10,14 +10,14 @@
         android:id="@+id/data_list_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/films_recycler_view"
-        app:layout_constraintEnd_toEndOf="@+id/films_recycler_view"
+        app:layout_constraintBottom_toBottomOf="@+id/items_recycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/items_recycler_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </ProgressBar>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/films_recycler_view"
+        android:id="@+id/items_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="reload"
-        app:layout_constraintBottom_toBottomOf="@+id/films_recycler_view"
+        app:layout_constraintBottom_toBottomOf="@+id/items_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

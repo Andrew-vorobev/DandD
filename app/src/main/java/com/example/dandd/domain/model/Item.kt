@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.data.model
+package com.example.dandd.domain.model
 
 import android.net.Uri
 import com.example.dandd.presentation.ui.model.skill.Skill

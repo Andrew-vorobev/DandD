@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.dandd.presentation.ui.model.skill.toStringBySeparator
 import com.example.dungeonanddragonsapp.databinding.FragmentDataDetailBinding
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
+import com.example.dandd.presentation.ui.model.item.ItemView
 
 class DataDetailFragment : Fragment() {
     private var _binding: FragmentDataDetailBinding? = null
@@ -36,9 +36,9 @@ class DataDetailFragment : Fragment() {
             })
         }
 
-        val itemView: ItemView? = arguments?.getParcelable("ItemView")
+        val classView: ItemView? = arguments?.getParcelable("ItemView")
 
-        with(itemView) {
+        with(classView) {
             binding.dataDetailName.text = "${this?.fullName}\n"
             binding.dataDetailDesc.text = "${this?.desc}"
             binding.dataDetailSkills.text =

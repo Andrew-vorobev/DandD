@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dandd.presentation.ui.adapter.FilmsRecyclerViewAdapter
+import com.example.dandd.presentation.ui.adapter.ItemsRecyclerView
+import com.example.dandd.presentation.ui.model.ClassView
 import com.example.dungeonanddragonsapp.R
 import com.example.dungeonanddragonsapp.databinding.FragmentDataListBinding
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,8 +40,8 @@ class DataListFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = binding.filmsRecyclerView
-        val adapter = FilmsRecyclerViewAdapter()
+        val recyclerView = binding.itemsRecyclerView
+        val adapter = ItemsRecyclerView()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -59,9 +59,9 @@ class DataListFragment(
 
         val bundle = Bundle()
 
-        adapter.setOnButtonClickListener(object : FilmsRecyclerViewAdapter.OnButtonClickListener {
-            override fun onClick(itemView: ItemView) {
-                bundle.putParcelable("ItemView", itemView)
+        adapter.setOnButtonClickListener(object : ItemsRecyclerView.OnButtonClickListener {
+            override fun onClick(classView: ClassView) {
+                bundle.putParcelable("ClassView", classView)
                 findNavController().navigate(R.id.navigation_data_detail, bundle)
             }
 
