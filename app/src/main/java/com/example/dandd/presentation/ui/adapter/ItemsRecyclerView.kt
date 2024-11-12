@@ -3,6 +3,7 @@ package com.example.dandd.presentation.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -15,34 +16,51 @@ import com.example.dungeonanddragonsapp.R
  */
 
 class ItemsRecyclerView :
-    ListAdapter<ClassView, ItemsRecyclerView.Itemsholder>(ItemDiffUtilCallback()) {
-    private lateinit var onButtonClickListener: OnButtonClickListener
+    ListAdapter<ClassView, ItemsRecyclerView.ItemsHolder>(ItemDiffUtilCallback()) {
+    private lateinit var onClickToDetail: OnClickToDetail
+    private lateinit var onClickSave: OnClickSave
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Itemsholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsHolder {
         val item = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_list, parent, false)
-        return Itemsholder(item)
+        return ItemsHolder(item)
     }
 
-    override fun onBindViewHolder(holder: Itemsholder, position: Int) {
+    override fun onBindViewHolder(holder: ItemsHolder, position: Int) {
         holder.classView.text = "Полное название: ${getItem(position).name}"
 
+        holder.buttonSave.setOnClickListener{
+            if (::onClickSave.isInitialized){
+                onClickSave.onClick(getItem(position))
+            }
+        }
+
         holder.itemView.setOnClickListener {
-            if (::onButtonClickListener.isInitialized) {
-                onButtonClickListener.onClick(getItem(position))
+            if (::onClickToDetail.isInitialized) {
+                onClickToDetail.onClick(getItem(position))
             }
         }
     }
 
-    interface OnButtonClickListener {
+    interface OnClickToDetail {
         fun onClick(classView: ClassView)
     }
 
-    fun setOnButtonClickListener(listener: OnButtonClickListener) {
-        onButtonClickListener = listener
+    fun setOnClickToDetail(listener: OnClickToDetail) {
+        onClickToDetail = listener
     }
 
-    class Itemsholder(classView: View) : RecyclerView.ViewHolder(classView) {
+    interface OnClickSave {
+        fun onClick(classView: ClassView)
+    }
+
+    fun setOnClickSave(listener: OnClickSave) {
+        onClickSave = listener
+    }
+
+    class ItemsHolder(classView: View) : RecyclerView.ViewHolder(classView) {
         val classView: TextView = itemView.findViewById(R.id.item_list_full_name)
+
+        val buttonSave: ImageButton = itemView.findViewById(R.id.item_list_favourite_button)
     }
 }

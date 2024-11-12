@@ -59,11 +59,18 @@ class DataListFragment(
 
         val bundle = Bundle()
 
-        adapter.setOnButtonClickListener(object : ItemsRecyclerView.OnButtonClickListener {
+        adapter.setOnClickToDetail(object : ItemsRecyclerView.OnClickToDetail {
             override fun onClick(classView: ClassView) {
                 bundle.putParcelable("index", classView)
                 findNavController().navigate(R.id.navigation_data_detail, bundle)
             }
+        })
+
+        adapter.setOnClickSave(object : ItemsRecyclerView.OnClickSave{
+            override fun onClick(classView: ClassView) {
+                dataListViewModel.save(classView)
+            }
+
         })
     }
 

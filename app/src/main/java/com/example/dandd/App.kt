@@ -1,6 +1,7 @@
 package com.example.dandd
 
 import android.app.Application
+import com.example.dandd.di.daoModule
 import com.example.dandd.di.retrofitModule
 import com.example.dandd.di.rootModule
 import org.koin.android.ext.koin.androidContext
@@ -11,7 +12,7 @@ class App: Application() {
         super.onCreate()
         startKoin{
             androidContext(this@App)
-            modules(rootModule, retrofitModule)
+            modules(rootModule, retrofitModule, daoModule)
         }
     }
 }

@@ -24,7 +24,13 @@ class DataListViewModel(
 
     fun loadItems(){
         viewModelScope.launch {
-            _items.value = classUseCase.getClasses().map { classConverter.convert(it) }
+            _items.value = classUseCase.getClasses().map { classConverter.convertToView(it) }
+        }
+    }
+
+    fun save(classView: ClassView){
+        viewModelScope.launch {
+            classUseCase.save(classItem = classConverter.convertToItem(classView))
         }
     }
 }

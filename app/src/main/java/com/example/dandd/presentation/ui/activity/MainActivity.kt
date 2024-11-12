@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_data_list,
-                R.id.navigation_notifications
+                R.id.navigation_favourite
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

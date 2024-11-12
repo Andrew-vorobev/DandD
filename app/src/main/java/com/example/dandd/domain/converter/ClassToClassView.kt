@@ -8,15 +8,25 @@ import com.example.dandd.presentation.ui.model.ClassView
  * @author Andrew
  */
 interface ClassToClassView {
-    fun convert(classInfo: ClassItem) : ClassView
+    fun convertToView(classItem: ClassItem) : ClassView
+
+    fun convertToItem(classView: ClassView) : ClassItem
 }
 
-class ClassToClassViewImpl() : ClassToClassView{
-    override fun convert(classInfo: ClassItem): ClassView {
+class ClassToClassViewImpl : ClassToClassView{
+    override fun convertToView(classItem: ClassItem): ClassView {
         return ClassView(
-            name = classInfo.name ?: "",
-            index = classInfo.index ?: "",
-            url = Uri.parse(classInfo.url) ?: Uri.EMPTY
+            name = classItem.name ?: "",
+            index = classItem.index ?: "",
+            url = Uri.parse(classItem.url) ?: Uri.EMPTY
+        )
+    }
+
+    override fun convertToItem(classView: ClassView): ClassItem {
+        return ClassItem(
+            name = classView.name,
+            index = classView.index,
+            url = classView.url.toString()
         )
     }
 }

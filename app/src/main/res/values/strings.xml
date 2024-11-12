@@ -2,7 +2,7 @@
     <string name="app_name">DungeonAndDragonsApp</string>
     <string name="title_home">Дом</string>
     <string name="title_dashboard">Список</string>
-    <string name="title_notifications">Уведомления</string>
+    <string name="title_favourite">Избранное</string>
     <string name="name_item_list">Название</string>
     <string name="data_detail_resource_name">Название</string>
     <string name="data_detail_resource_desc">Описание</string>

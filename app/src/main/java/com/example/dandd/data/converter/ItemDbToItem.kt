@@ -11,10 +11,10 @@ interface ItemDbToItem {
     fun convert(itemDb: ItemDb): Item
 }
 
-class ItemDbToItemImpl() : ItemDbToItem {
+class ItemDbToItemImpl : ItemDbToItem {
     override fun convert(itemDb: ItemDb): Item {
         return Item(
-            index = itemDb.index ?: "barbarian",
+            index = itemDb.index ?: "",
             name = itemDb.name ?: "",
             fullName = itemDb.fullName ?: "",
             desc = itemDb.desc ?: emptyList(),

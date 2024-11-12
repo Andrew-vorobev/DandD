@@ -10,6 +10,7 @@ interface ClassesNetworkToClassDb {
 class ClassesNetworkToClassDbImpl : ClassesNetworkToClassDb {
     override fun convert(classInfo: Results): ClassDb {
         return ClassDb(
+            id = 0,
             index = classInfo.index,
             name = classInfo.name,
             url = classInfo.url
