@@ -1,11 +1,11 @@
-package com.example.dandd.data.retrofit.model
+package com.example.dandd.data.retrofit.model.itemInfo
 
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Item(
+data class ProficiencyX(
     @SerialName("index")
     val index: String? = null,
     @SerialName("name")

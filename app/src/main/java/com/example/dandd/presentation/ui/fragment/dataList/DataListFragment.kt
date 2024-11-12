@@ -61,10 +61,9 @@ class DataListFragment(
 
         adapter.setOnButtonClickListener(object : ItemsRecyclerView.OnButtonClickListener {
             override fun onClick(classView: ClassView) {
-                bundle.putParcelable("ClassView", classView)
+                bundle.putParcelable("index", classView)
                 findNavController().navigate(R.id.navigation_data_detail, bundle)
             }
-
         })
     }
 

@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/navigation_data_detail"
-        android:name="com.example.dungeonanddragonsapp.presentation.ui.fragment.detail.DataDetailFragment"
+        android:name="com.example.dandd.presentation.ui.fragment.detail.DataDetailFragment"
         tools:layout="@layout/fragment_data_detail">
         <argument
             android:name="ItemView"

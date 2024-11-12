@@ -21,8 +21,8 @@ import com.example.dandd.domain.usecase.ClassUseCaseImpl
 import com.example.dandd.domain.usecase.ItemsUseCase
 import com.example.dandd.domain.usecase.ItemsUseCaseImpl
 import com.example.dandd.presentation.ui.fragment.dataList.DataListViewModel
+import com.example.dandd.presentation.ui.fragment.detail.DataDetailViewModel
 import com.example.dandd.presentation.ui.fragment.notifications.NotificationsViewModel
-import com.example.dungeonanddragonsapp.presentation.ui.fragment.detail.DataDetailViewModel
 import com.example.dungeonanddragonsapp.presentation.ui.fragment.home.HomeViewModel
 import org.koin.dsl.module
 
@@ -35,8 +35,8 @@ val rootModule = module{
     factory<ClassDbToClassItem> { ClassDbToClassItemImpl() }
     factory<ClassToClassView> {ClassToClassViewImpl()}
 
-    single<DataListViewModel> {DataListViewModel(get(), get(),get(),get())}
-    single<DataDetailViewModel> {DataDetailViewModel()}
+    single<DataListViewModel> {DataListViewModel(get(), get())}
+    single<DataDetailViewModel> { DataDetailViewModel(get(),get()) }
     single<HomeViewModel> {HomeViewModel()}
     single<NotificationsViewModel> {NotificationsViewModel()}
 

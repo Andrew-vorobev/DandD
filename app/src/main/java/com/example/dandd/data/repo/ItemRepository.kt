@@ -3,9 +3,11 @@ package com.example.dandd.data.repo
 import com.example.dandd.data.converter.ClassDbToClassItem
 import com.example.dandd.data.converter.ItemDbToItem
 import com.example.dandd.data.dao.ItemDao
+import com.example.dandd.data.model.ItemDb
 import com.example.dandd.data.retrofit.api.ItemApi
 import com.example.dandd.data.retrofit.converter.ClassesNetworkToClassDb
 import com.example.dandd.data.retrofit.converter.ItemNetworkToItemDb
+import com.example.dandd.data.retrofit.model.itemInfo.ItemNetwork
 import com.example.dandd.domain.model.ClassItem
 import com.example.dandd.domain.model.Item
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +20,7 @@ import kotlinx.coroutines.withContext
 interface ItemRepository {
     suspend fun getClasses(): List<ClassItem>
 
-    suspend fun getItem(id: Int): Item
+    suspend fun getItem(index: String): Item
 }
 
 class ItemRepositoryImpl(
@@ -37,11 +39,11 @@ class ItemRepositoryImpl(
         }
     }
 
-    override suspend fun getItem(id: Int): Item =
-        itemDbToItem.convert(itemDb = itemDao.getItem(id))
-
-    private suspend fun getItemQuery(query: String): List<Item> {
-        return emptyList()
+    override suspend fun getItem(index: String): Item {
+        return withContext(Dispatchers.IO){
+            val itemNetwork: ItemNetwork = itemApi.getClass(index = index)
+            val itemDb: ItemDb = itemNetworkToItemDb.convert(itemNetwork)
+            itemDbToItem.convert(itemDb)
+        }
     }
-
 }

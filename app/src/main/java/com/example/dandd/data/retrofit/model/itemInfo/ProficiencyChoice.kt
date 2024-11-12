@@ -1,4 +1,4 @@
-package com.example.dandd.data.retrofit.model
+package com.example.dandd.data.retrofit.model.itemInfo
 
 
 import kotlinx.serialization.SerialName
