@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.dandd.presentation.ui.model.skill.toStringBySeparator
 import com.example.dungeonanddragonsapp.databinding.FragmentDataDetailBinding
 import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
-import com.example.dungeonanddragonsapp.presentation.ui.model.skill.toStringBySeparator
 
 class DataDetailFragment : Fragment() {
     private var _binding: FragmentDataDetailBinding? = null
@@ -40,10 +40,14 @@ class DataDetailFragment : Fragment() {
 
         with(itemView) {
             binding.dataDetailName.text = "${this?.fullName}\n"
-            binding.dataDetailDesc.text =
-                "${this?.desc?.toStringBySeparator(selector = { it }, separator = "\n\n")} \n"
+            binding.dataDetailDesc.text = "${this?.desc}"
             binding.dataDetailSkills.text =
-                "${this?.skills?.toStringBySeparator(selector = { it.name }, separator = "\n\n")}\n"
+                "${
+                    this?.skills?.toStringBySeparator(
+                        selector = { it.desc },
+                        separator = "\n\n"
+                    )
+                }\n"
         }
     }
 
@@ -56,7 +60,8 @@ class DataDetailFragment : Fragment() {
             intArrayOf(binding.dataDetailScrollView.scrollX, binding.dataDetailScrollView.scrollY)
         )
     }
-    companion object{
+
+    companion object {
         private const val ARTICLE_SCROLL_POSITION = "ARTICLE_SCROLL_POSITION"
     }
 }

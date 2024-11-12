@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.adapter
+package com.example.dandd.presentation.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dandd.presentation.ui.model.skill.toStringBySeparator
 import com.example.dungeonanddragonsapp.R
 import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
-import com.example.dungeonanddragonsapp.presentation.ui.model.skill.toStringBySeparator
 import com.example.dungeonanddragonsapp.presentation.ui.util.ItemDiffUtilCallback
 
 /**
@@ -28,7 +28,7 @@ class FilmsRecyclerViewAdapter :
     override fun onBindViewHolder(holder: FilmsHolder, position: Int) {
         holder.itemName.text = "Полное название: ${getItem(position).fullName}"
         holder.itemSkills.text =
-            "Используемые скиллы: ${getItem(position).skills.toStringBySeparator({it.name})}"
+            "Используемые скиллы: ${getItem(position).skills.toStringBySeparator({it.choose.toString()})}"
 
         holder.itemView.setOnClickListener {
             if (::onButtonClickListener.isInitialized) {
