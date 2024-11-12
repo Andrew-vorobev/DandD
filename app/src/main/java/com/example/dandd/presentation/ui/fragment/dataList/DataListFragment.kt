@@ -49,11 +49,21 @@ class DataListFragment(
             dataListViewModel.loadItems()
         }
 
+        binding.toggleButtonFragmentDataList.setOnClickListener{
+            dataListViewModel.sorting()
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             dataListViewModel.items.collect { items ->
                 binding.dataListProgressBar.isInvisible = items.isNotEmpty()
                 binding.dataListReloadButton.isInvisible = items.isNotEmpty()
                 adapter.submitList(items)
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            dataListViewModel.sorted.collect{
+                binding.toggleButtonFragmentDataList.isChecked = it
             }
         }
 
@@ -70,7 +80,6 @@ class DataListFragment(
             override fun onClick(classView: ClassView) {
                 dataListViewModel.save(classView)
             }
-
         })
     }
 
