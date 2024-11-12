@@ -22,12 +22,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_favourite"
-        android:name="com.example.dandd.presentation.ui.fragment.notifications.FavouritesFragment"
-        android:label="@string/title_favourite"
-        tools:layout="@layout/fragment_favourite" />
-
-    <fragment
         android:id="@+id/navigation_data_detail"
         android:name="com.example.dandd.presentation.ui.fragment.detail.DataDetailFragment"
         tools:layout="@layout/fragment_data_detail">

@@ -20,7 +20,6 @@ import com.example.dandd.domain.usecase.ItemsUseCase
 import com.example.dandd.domain.usecase.ItemsUseCaseImpl
 import com.example.dandd.presentation.ui.fragment.dataList.DataListViewModel
 import com.example.dandd.presentation.ui.fragment.detail.DataDetailViewModel
-import com.example.dandd.presentation.ui.fragment.notifications.FavouritesViewModel
 import com.example.dungeonanddragonsapp.presentation.ui.fragment.home.HomeViewModel
 import org.koin.dsl.module
 
@@ -35,7 +34,7 @@ val rootModule = module{
     single<DataListViewModel> {DataListViewModel(get(), get())}
     single<DataDetailViewModel> { DataDetailViewModel(get(),get()) }
     single<HomeViewModel> {HomeViewModel()}
-    single<FavouritesViewModel> {FavouritesViewModel(get(), get())}
+//    single<FavouritesViewModel> {FavouritesViewModel(get(), get())}
 
     single<ItemsUseCase> { ItemsUseCaseImpl(get()) }
     single<ItemToItemView>{ ItemToItemViewImpl()}
