@@ -22,9 +22,10 @@ import com.example.dandd.domain.usecase.DatastoreUseCase
 import com.example.dandd.domain.usecase.DatastoreUseCaseImpl
 import com.example.dandd.domain.usecase.ItemsUseCase
 import com.example.dandd.domain.usecase.ItemsUseCaseImpl
+import com.example.dandd.presentation.ui.activity.MainActivityViewModel
 import com.example.dandd.presentation.ui.fragment.dataList.DataListViewModel
 import com.example.dandd.presentation.ui.fragment.detail.DataDetailViewModel
-import com.example.dungeonanddragonsapp.presentation.ui.fragment.home.HomeViewModel
+import com.example.dandd.presentation.ui.fragment.home.HomeViewModel
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
@@ -41,7 +42,8 @@ val rootModule = module{
 
     single<DataListViewModel> {DataListViewModel(get(), get(), get())}
     single<DataDetailViewModel> { DataDetailViewModel(get(),get()) }
-    single<HomeViewModel> {HomeViewModel()}
+    single<HomeViewModel> { HomeViewModel() }
+    single<MainActivityViewModel> { MainActivityViewModel(get()) }
 //    single<FavouritesViewModel> {FavouritesViewModel(get(), get())}
 
     single<ItemsUseCase> { ItemsUseCaseImpl(get()) }
