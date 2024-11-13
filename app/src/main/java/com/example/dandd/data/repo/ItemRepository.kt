@@ -39,9 +39,13 @@ class ItemRepositoryImpl(
 ) : ItemRepository {
     override suspend fun getClasses(): List<ClassItem> {
         return withContext(Dispatchers.IO) {
-            val classesNetwork = itemApi.getClasses()
-            val classesDb = classesNetwork.results?.map { classConverterNetwork.convert(it!!) }
-            classesDb?.map { classConverterDb.convertToItem(it) } ?: emptyList()
+            try{
+                val classesNetwork = itemApi.getClasses()
+                val classesDb = classesNetwork.results?.map { classConverterNetwork.convert(it!!) }
+                classesDb?.map { classConverterDb.convertToItem(it) } ?: emptyList()
+            } catch(e: Exception) {
+                emptyList()
+            }
         }
     }
 
