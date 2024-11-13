@@ -1,8 +1,8 @@
-package com.example.dungeonanddragonsapp.data.converter
+package com.example.dandd.data.converter
 
 import android.net.Uri
 import com.example.dandd.data.model.ItemDb
-import com.example.dungeonanddragonsapp.data.model.Item
+import com.example.dandd.domain.model.Item
 
 /**
  * @author Andrew
@@ -11,10 +11,10 @@ interface ItemDbToItem {
     fun convert(itemDb: ItemDb): Item
 }
 
-class ItemDbToItemImpl() : ItemDbToItem {
+class ItemDbToItemImpl : ItemDbToItem {
     override fun convert(itemDb: ItemDb): Item {
         return Item(
-            index = itemDb.index ?: "barbarian",
+            index = itemDb.index ?: "",
             name = itemDb.name ?: "",
             fullName = itemDb.fullName ?: "",
             desc = itemDb.desc ?: emptyList(),

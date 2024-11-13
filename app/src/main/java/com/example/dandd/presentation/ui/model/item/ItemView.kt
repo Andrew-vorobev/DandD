@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.model.item
+package com.example.dandd.presentation.ui.model.item
 
 import android.net.Uri
 import android.os.Parcelable
@@ -21,3 +21,4 @@ class ItemView(
     @Serializable(with = Serializer::class)
     val url: Uri
 ) : Parcelable
+

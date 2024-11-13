@@ -1,4 +1,4 @@
-package com.example.dungeonanddragonsapp.presentation.ui.fragment.home
+package com.example.dandd.presentation.ui.fragment.home
 
 import androidx.lifecycle.ViewModel
 
