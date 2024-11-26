@@ -2,7 +2,7 @@ package com.example.dandd.data.retrofit.converter
 
 import android.net.Uri
 import com.example.dandd.data.model.ItemDb
-import com.example.dandd.data.retrofit.model.ItemNetwork
+import com.example.dandd.data.retrofit.model.itemInfo.ItemNetwork
 import com.example.dandd.presentation.ui.model.skill.Skill
 
 interface ItemNetworkToItemDb {

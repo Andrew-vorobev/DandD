@@ -1,7 +1,7 @@
 package com.example.dandd.domain.converter
 
-import com.example.dungeonanddragonsapp.data.model.Item
-import com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView
+import com.example.dandd.domain.model.Item
+import com.example.dandd.presentation.ui.model.item.ItemView
 
 interface ItemToItemView{
     fun convert(item: Item) : ItemView

@@ -3,8 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("plugin.serialization") version "1.9.21"
     id("kotlin-parcelize")
-    id("kotlin-kapt")
-    kotlin("kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -66,6 +65,14 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     implementation(libs.converter.gson)
+
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    implementation(libs.androidx.datastore.preferences)
+
+    implementation(libs.threetenabp)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
