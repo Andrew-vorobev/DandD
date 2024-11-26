@@ -7,9 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.dungeonanddragonsapp.presentation.ui.fragment.home.HomeFragment"
+        android:name="com.example.dandd.presentation.ui.fragment.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_edit_profile"
+            app:destination="@id/navigation_edit_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_profile"
+        android:name="com.example.dandd.presentation.ui.fragment.profileEdit.EditProfileFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_edit_profile" />
 
     <fragment
         android:id="@+id/navigation_data_list"
@@ -22,18 +32,21 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.dandd.presentation.ui.fragment.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
         android:id="@+id/navigation_data_detail"
-        android:name="com.example.dungeonanddragonsapp.presentation.ui.fragment.detail.DataDetailFragment"
+        android:name="com.example.dandd.presentation.ui.fragment.detail.DataDetailFragment"
         tools:layout="@layout/fragment_data_detail">
         <argument
             android:name="ItemView"
-            app:argType="com.example.dungeonanddragonsapp.presentation.ui.model.item.ItemView" />
+            app:argType="com.example.dandd.presentation.ui.model.item.ItemView" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.dandd.presentation.ui.fragment.favourites.FavouritesFragment"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_navigation_favourite_to_navigation_data_detail"
+            app:destination="@id/navigation_data_detail" />
     </fragment>
 
 </navigation>
