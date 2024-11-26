@@ -8,4 +8,6 @@
     <string name="data_detail_resource_desc">Описание</string>
     <string name="data_detail_resource_skills">Описание скиллов</string>
     <string name="item_list_skills_resources">Скилы</string>
+    <string name="receiver_name">notification_name</string>
+    <string name="receiver_id">notification_id</string>
 </resources>
